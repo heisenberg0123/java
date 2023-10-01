@@ -3,7 +3,7 @@ public class  Zoo {
     Animal[] animals;
     String name,
             city;
-    int nbrCages;
+    private final int nbrCages = 25;
 
     int nbrAnimals;
 
@@ -14,7 +14,6 @@ public class  Zoo {
         animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
     }
 
     void displayZoo() {
@@ -60,8 +59,32 @@ public class  Zoo {
     }
 
 
+
+
+
+
+
     @Override
     public String toString() {
         return "Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages;
+    }
+
+
+//PROSIT 3
+    boolean isZooFull() {
+        return nbrAnimals >= nbrCages;
+    }
+
+
+
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
+        if (z1.nbrAnimals > z2.nbrAnimals) {
+            return z1;
+        } else if (z2.nbrAnimals > z1.nbrAnimals) {
+            return z2;
+        } else {
+
+            return z1;
+        }
     }
 }

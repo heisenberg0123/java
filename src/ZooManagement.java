@@ -11,8 +11,14 @@ public class ZooManagement {
         Zoo myZoo = new Zoo();
         myZoo.name = "Wildlife Park";
         myZoo.city = "Ariana";
-        myZoo.nbrCages = 25;
-        myZoo.animals = new Animal[25];
+        myZoo.animals = new Animal[20];
+
+        Zoo myZoo1 = new Zoo();
+        myZoo.name = "Wildlife Park 2";
+        myZoo.city = "mrj";
+        myZoo.animals = new Animal[10];
+
+
 
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
@@ -32,6 +38,22 @@ public class ZooManagement {
         System.out.println(myZoo.removeAnimal(dog));
         myZoo.displayAnimals();
 
+        //PROSIT 3
+myZoo.isZooFull();
+if (myZoo.isZooFull()){
+    System.out.printf("plein");
+}else {
+    System.out.printf("ajout success");
+}
+
+
+
+      Zoo zz= Zoo.comparerZoo(myZoo, myZoo1);
+
+        System.out.println("Le zoo avec le plus d'animaux est : " + zz);
+
     }
+
+
 
 }

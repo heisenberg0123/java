@@ -25,4 +25,20 @@ public class Animal {
                 ", isMammal=" + isMammal +
                 '}';
     }
+
+
+    //PROSIT4
+
+
+    public void setAge(int age){
+        if(age>0){
+            this.age=age;
+        }
+        else {
+            System.out.printf("age nesgative");
+        }
+    }
+
+
+
 }

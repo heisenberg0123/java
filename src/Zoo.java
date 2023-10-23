@@ -11,8 +11,17 @@ public class  Zoo {
     }
 
     public Zoo(String name, String city, int nbrCages) {
+
         animals = new Animal[nbrCages];
-        this.name = name;
+
+        //PROSIT4
+        if (name.isEmpty()){
+            System.out.printf("erreur");
+        }
+        else{
+            this.name = name;
+
+        }
         this.city = city;
     }
 
@@ -20,15 +29,7 @@ public class  Zoo {
         System.out.printf("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages);
     }
 
-    boolean addAnimal(Animal animal) {
-        if (searchAnimal(animal) != -1)
-            return false;
-        if (nbrAnimals == nbrCages)
-            return false;
-        animals[nbrAnimals] = animal;
-        nbrAnimals++;
-        return true;
-    }
+
 
     boolean removeAnimal(Animal animal) {
         int indexAnimal = searchAnimal(animal);
@@ -72,6 +73,7 @@ public class  Zoo {
 
 //PROSIT 3
     boolean isZooFull() {
+
         return nbrAnimals >= nbrCages;
     }
 
@@ -87,4 +89,24 @@ public class  Zoo {
             return z1;
         }
     }
+
+
+       //PROSIT4
+       public boolean addAnimal(Animal animal) {
+           if (searchAnimal(animal) != -1) {
+
+               return false;
+           }
+
+           if (isZooFull()) {
+               // Le zoo est plein, retourne false
+               return false;
+           }
+
+           animals[nbrAnimals] = animal;
+           nbrAnimals++;
+           return true;
+       }
+
+
 }

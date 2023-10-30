@@ -105,9 +105,84 @@ public class  Zoo {
 
            animals[nbrAnimals] = animal;
            nbrAnimals++;
-           System.out.printf("kakaka");
+
            return true;
        }
+
+       //prosit 5
+    public class aquatic {
+           private String habitat;
+
+           public aquatic(String habitat) {
+
+             this.habitat=habitat;
+           }
+
+           public String getHabitat(){
+               return habitat;
+           }
+
+           public void setHabitat(String habitat) {
+               this.habitat = habitat;
+           }
+
+
+       }
+    public class terrestre {
+        private int nbrLegs;
+
+        public terrestre(int nbrLegs) {
+
+            this.nbrLegs = nbrLegs;
+        }
+
+        public int getNbrLegs(){
+            return nbrLegs;
+        }
+
+        public void getNbrLegs(int habitat) {
+            this.nbrLegs = nbrLegs;
+        }
+
+
+    }
+    public class Dolphin extends aquatic {
+        private float swimmingSpeed;
+
+        // Constructeur
+        public Dolphin(String habitat, float swimmingSpeed) {
+            super(habitat);
+            this.swimmingSpeed = swimmingSpeed;
+        }
+
+        // Getter et Setter pour swimmingSpeed
+        public float getSwimmingSpeed() {
+            return swimmingSpeed;
+        }
+
+        public void setSwimmingSpeed(float swimmingSpeed) {
+            this.swimmingSpeed = swimmingSpeed;
+        }
+    }
+
+    public class Penguin extends aquatic {
+        private float swimmingDepth;
+
+        // Constructeur
+        public Penguin(String habitat, float swimmingDepth) {
+            super(habitat);
+            this.swimmingDepth = swimmingDepth;
+        }
+
+        // Getter et Setter pour swimmingDepth
+        public float getSwimmingDepth() {
+            return swimmingDepth;
+        }
+
+        public void setSwimmingDepth(float swimmingDepth) {
+            this.swimmingDepth = swimmingDepth;
+        }
+    }
 
 
 }

@@ -1,3 +1,4 @@
+import tn.esprit.gestionzoo.entities.Aquatic;
 
 public  class aquatic extends Animal {
 
@@ -19,5 +20,22 @@ public  class aquatic extends Animal {
     @Override
     public String toString() {
         return super.toString() + ", habitat:" + habitat;
+    }
+
+
+
+
+
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        aquatic other = (aquatic) obj;
+        return age == other.age && habitat.equals(other.habitat) && name.equals(other.name);
     }
 }

@@ -38,6 +38,9 @@ private Aquatic[] aquaticAnimals;
         }
     }
 
+    // Redéfinissez la méthode equals() pour comparer les attributs
+    @Override
+
     public void displayNumberOfAquaticsByType() {
         int dolphinCount = 0;
         int penguinCount = 0;

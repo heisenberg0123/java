@@ -1,10 +1,14 @@
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+
 public class  Zoo {
 
     Animal[] animals;
     String name,
             city;
     private final int nbrCages = 25;
-
+private Aquatic[] aquaticAnimals;
     int nbrAnimals;
 
     public Zoo() {
@@ -22,8 +26,34 @@ public class  Zoo {
             this.name = name;
 
         }
+        this.aquaticAnimals = new Aquatic[10];
         this.city = city;
     }
+
+
+    public void addAqaticAnimal(Aquatic aquatic){
+
+        for(int i=0;i<aquaticAnimals.length;i++){
+           aquaticAnimals[i]=aquatic;
+        }
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int dolphinCount = 0;
+        int penguinCount = 0;
+
+        for (Aquatic aquaticAnimal : aquaticAnimals) {
+            if (aquaticAnimal instanceof tn.esprit.gestionzoo.entities.Dolphin) {
+                dolphinCount++;
+            } else if (aquaticAnimal instanceof tn.esprit.gestionzoo.entities.Penguin) {
+                penguinCount++;
+            }
+        }
+
+        System.out.println("Nombre de dauphins : " + dolphinCount);
+        System.out.println("Nombre de pingouins : " + penguinCount);
+    }
+
 
     void displayZoo() {
         System.out.printf("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages);
@@ -105,8 +135,84 @@ public class  Zoo {
 
            animals[nbrAnimals] = animal;
            nbrAnimals++;
+
            return true;
        }
+
+       //prosit 5
+    public class aquatic {
+           private String habitat;
+
+           public aquatic(String habitat) {
+
+             this.habitat=habitat;
+           }
+
+           public String getHabitat(){
+               return habitat;
+           }
+
+           public void setHabitat(String habitat) {
+               this.habitat = habitat;
+           }
+
+
+       }
+    public class terrestre {
+        private int nbrLegs;
+
+        public terrestre(int nbrLegs) {
+
+            this.nbrLegs = nbrLegs;
+        }
+
+        public int getNbrLegs(){
+            return nbrLegs;
+        }
+
+        public void getNbrLegs(int habitat) {
+            this.nbrLegs = nbrLegs;
+        }
+
+
+    }
+    public class Dolphin extends aquatic {
+        private float swimmingSpeed;
+
+        // Constructeur
+        public Dolphin(String habitat, float swimmingSpeed) {
+            super(habitat);
+            this.swimmingSpeed = swimmingSpeed;
+        }
+
+        // Getter et Setter pour swimmingSpeed
+        public float getSwimmingSpeed() {
+            return swimmingSpeed;
+        }
+
+        public void setSwimmingSpeed(float swimmingSpeed) {
+            this.swimmingSpeed = swimmingSpeed;
+        }
+    }
+
+    public class Penguin extends aquatic {
+        private float swimmingDepth;
+
+        // Constructeur
+        public Penguin(String habitat, float swimmingDepth) {
+            super(habitat);
+            this.swimmingDepth = swimmingDepth;
+        }
+
+        // Getter et Setter pour swimmingDepth
+        public float getSwimmingDepth() {
+            return swimmingDepth;
+        }
+
+        public void setSwimmingDepth(float swimmingDepth) {
+            this.swimmingDepth = swimmingDepth;
+        }
+    }
 
 
 }

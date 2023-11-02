@@ -1,6 +1,6 @@
 import tn.esprit.gestionzoo.entities.Aquatic;
 
-public class Dolphin extends aquatic {
+public abstract class Dolphin extends aquatic {
     private float swimmingSpeed;
 
     // Constructeur
@@ -15,10 +15,8 @@ public class Dolphin extends aquatic {
         }
 
         @Override
-        public void swim() {
-            System.out.println("This dolphin is swimming.");
-        }
 
+           public abstract  void swim();
         @Override
         public String toString() {
             return super.toString() + ", swimmingSpeed:" + swimmingSpeed;

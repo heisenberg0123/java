@@ -1,3 +1,5 @@
+
+
 public class Penguin extends aquatic {
     private float swimmingDepth;
 

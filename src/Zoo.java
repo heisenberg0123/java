@@ -1,10 +1,14 @@
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
+
 public class  Zoo {
 
     Animal[] animals;
     String name,
             city;
     private final int nbrCages = 25;
-
+private Aquatic[] aquaticAnimals;
     int nbrAnimals;
 
     public Zoo() {
@@ -22,8 +26,34 @@ public class  Zoo {
             this.name = name;
 
         }
+        this.aquaticAnimals = new Aquatic[10];
         this.city = city;
     }
+
+
+    public void addAqaticAnimal(Aquatic aquatic){
+
+        for(int i=0;i<aquaticAnimals.length;i++){
+           aquaticAnimals[i]=aquatic;
+        }
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int dolphinCount = 0;
+        int penguinCount = 0;
+
+        for (Aquatic aquaticAnimal : aquaticAnimals) {
+            if (aquaticAnimal instanceof tn.esprit.gestionzoo.entities.Dolphin) {
+                dolphinCount++;
+            } else if (aquaticAnimal instanceof tn.esprit.gestionzoo.entities.Penguin) {
+                penguinCount++;
+            }
+        }
+
+        System.out.println("Nombre de dauphins : " + dolphinCount);
+        System.out.println("Nombre de pingouins : " + penguinCount);
+    }
+
 
     void displayZoo() {
         System.out.printf("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages);

@@ -55,6 +55,9 @@ if (myZoo.isZooFull()){
 
       Zoo zz= Zoo.comparerZoo(myZoo, myZoo1);
 
+
+//prosit5
+
         System.out.println("Le zoo avec le plus d'animaux est : " + zz);
         Aquatic aquatic = new Aquatic("Fish", "Sardine", 2, true, "Sea");
         Terrestrial terrestrial = new Terrestrial("Panda", "Narla", 4, true, 2);
@@ -73,8 +76,13 @@ if (myZoo.isZooFull()){
         dolphin.swim();
         penguin.swim();
 
-    }
 
+//prosit5
+
+
+        myZoo.addAqaticAnimal(dolphin);
+
+    }
 
 
 }
